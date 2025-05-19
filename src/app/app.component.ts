@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { RouterOutlet } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
 
 
 @Component({
@@ -8,6 +10,7 @@ import { RouterOutlet } from '@angular/router';
   imports: [
     RouterOutlet,
     HeaderComponent,
+    FormsModule,
   
   ],
   templateUrl: './app.component.html',

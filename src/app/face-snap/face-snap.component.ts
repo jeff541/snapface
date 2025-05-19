@@ -1,12 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FaceSnap } from '../models/face-snap';
 import {
-  DatePipe,
-  LowerCasePipe,
-  NgClass,
-  NgStyle,
+ 
   TitleCasePipe,
-  UpperCasePipe,
 } from '@angular/common';
 import { Router } from '@angular/router';
 

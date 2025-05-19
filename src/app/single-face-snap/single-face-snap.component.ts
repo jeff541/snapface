@@ -55,7 +55,7 @@ snap() {
     this.userHasSnapped = false;
   }
     private getFaceSnap() {
-    const faceSnapId = this.route.snapshot.params['id'];
+    const faceSnapId = +this.route.snapshot.params['id'];
     this.faceSnap = this.faceSnapsService.getFaceSnapById(faceSnapId);
   }
 
