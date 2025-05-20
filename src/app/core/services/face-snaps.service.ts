@@ -44,22 +44,19 @@ export class FacesnapsService {
     description: string;
     photo: string;
     location?: string;
-  }): Observable<FaceSnap>{
-  
-      return this.getFaceSnaps().pipe(
-         map(facesnaps => [...facesnaps].sort((a,b) => a.id - b.id)),
-         map(sortedFacesnaps => sortedFacesnaps[sortedFacesnaps.length - 1]),
-         map(previousFacesnap => ({
-            ...formValue,
-            snaps: 0,
-            createdDate: new Date(),
-            id: previousFacesnap.id + 1
-        })),
-        switchMap(newFacesnap => this.http.post<FaceSnap>(
-            'http://localhost:3000/facesnaps',
-            newFacesnap)
-        )
+  }): Observable<FaceSnap> {
+    return this.getFaceSnaps().pipe(
+      map((facesnaps) => [...facesnaps].sort((a, b) => a.id - b.id)),
+      map((sortedFacesnaps) => sortedFacesnaps[sortedFacesnaps.length - 1]),
+      map((previousFacesnap) => ({
+        ...formValue,
+        snaps: 0,
+        createdDate: new Date(),
+        id: previousFacesnap.id + 1,
+      })),
+      switchMap((newFacesnap) =>
+        this.http.post<FaceSnap>('http://localhost:3000/facesnaps', newFacesnap)
+      )
     );
-
   }
 }

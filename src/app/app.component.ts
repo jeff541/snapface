@@ -1,5 +1,5 @@
 import { Component, NgModule } from '@angular/core';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './core/components/header/header.component';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
@@ -11,7 +11,6 @@ import { FormsModule } from '@angular/forms';
     RouterOutlet,
     HeaderComponent,
     FormsModule,
-  
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
